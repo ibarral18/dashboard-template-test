@@ -1,0 +1,88 @@
+let counter = 1;
+
+document.getElementById("add").onclick = function () {
+  let array = [];
+  let user = document.getElementById("username").value;
+  userCheck = user.replace(/\s+/g, '');
+  let pass = document.getElementById("password").value;
+  passCheck = pass.replace(/\s+/g, '');
+  let acctNumber = Math.floor(100000000 + Math.random() * 900000000);
+  if(userCheck != '' && (passCheck != '' && pass.length <= 130)){
+    let x  = document.createElement("SECTION");
+    x.setAttribute("id", "section" + counter);
+    document.getElementsByClassName('className');
+    document.getElementById('dashboard').appendChild(x);
+    let acctNameP = document.createElement("H1");
+    let acctName = document.createTextNode(user);
+    acctNameP.appendChild(acctName);
+    document.getElementById('section' + counter).appendChild(acctNameP);
+    let acctNumP = document.createElement("P");
+    let acctNum = document.createTextNode(acctNumber);
+    acctNumP.appendChild(acctNum);
+    document.getElementById('section' + counter).appendChild(acctNumP);
+    let acctDescP = document.createElement("P");
+    let acctDesc = document.createTextNode(pass);
+    acctDescP.appendChild(acctDesc);
+    document.getElementById('section' + counter).appendChild(acctDescP);
+    alert("Completed");
+    document.getElementById('username').value = "";
+    document.getElementById('password').value = "";
+    counter++;
+  }
+
+  else{
+    alert('NO');
+  }
+
+}
+
+var userEnter = document.getElementById("username");
+userEnter.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+        addingElement(e);
+    }
+});
+
+var passEnter = document.getElementById("password");
+passEnter.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+        addingElement(e);
+    }
+});
+
+function addingElement(e){
+  let text = e.target.value;
+  let array = [];
+  let user = document.getElementById("username").value;
+  userCheck = user.replace(/\s+/g, '');
+  let pass = document.getElementById("password").value;
+  passCheck = pass.replace(/\s+/g, '');
+  let acctNumber = Math.floor(100000000 + Math.random() * 900000000);
+
+  if(userCheck != '' && (passCheck != '' && pass.length >= 6)){
+    let x  = document.createElement("SECTION");
+    x.setAttribute("id", "section" + counter);
+    document.getElementsByClassName('className');
+    document.getElementById('dashboard').appendChild(x);
+    let acctNameP = document.createElement("H1");
+    let acctName = document.createTextNode(user);
+    acctNameP.appendChild(acctName);
+    document.getElementById('section' + counter).appendChild(acctNameP);
+    let acctNumP = document.createElement("P");
+    let acctNum = document.createTextNode(acctNumber);
+    acctNumP.appendChild(acctNum);
+    document.getElementById('section' + counter).appendChild(acctNumP);
+    let acctDescP = document.createElement("P");
+    let acctDesc = document.createTextNode(pass);
+    acctDescP.appendChild(acctDesc);
+    document.getElementById('section' + counter).appendChild(acctDescP);
+    alert("Completed");
+    document.getElementById('username').value = "";
+    document.getElementById('password').value = "";
+    counter++;
+  }
+
+  else{
+    alert('NO');
+  }
+}
